@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+  <g id="Groupe_6" data-name="Groupe 6" transform="translate(-380 -35)">
+    <path id="Rectangle_22" data-name="Rectangle 22" d="M2,0h8a0,0,0,0,1,0,0V8a2,2,0,0,1-2,2H2A2,2,0,0,1,0,8V2A2,2,0,0,1,2,0Z" transform="translate(380 47)" fill="#272727"/>
+    <path id="Rectangle_23" data-name="Rectangle 23" d="M2,0H8a2,2,0,0,1,2,2v8a0,0,0,0,1,0,0H2A2,2,0,0,1,0,8V2A2,2,0,0,1,2,0Z" transform="translate(380 35)" fill="#272727"/>
+    <path id="Rectangle_24" data-name="Rectangle 24" d="M2,0H8a2,2,0,0,1,2,2V8a2,2,0,0,1-2,2H0a0,0,0,0,1,0,0V2A2,2,0,0,1,2,0Z" transform="translate(392 35)" fill="#272727"/>
+    <path id="Rectangle_25" data-name="Rectangle 25" d="M0,0H8a2,2,0,0,1,2,2V8a2,2,0,0,1-2,2H2A2,2,0,0,1,0,8V0A0,0,0,0,1,0,0Z" transform="translate(392 47)" fill="#272727"/>
+  </g>
+</svg>

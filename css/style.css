@@ -1,0 +1,150 @@
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #F9F9F9;
+    color: #272727;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+    margin: 20px 0;
+    padding: 0 120px;
+}
+
+.header-logo {
+    width: 200px;
+    margin: 0;
+    font-size: 22px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: bold;
+    position: relative;
+    top: 6px;
+    z-index: 10;
+    color: #9DE2D2;
+}
+
+.header-logo::after {
+    content: 'blog.achabe.com';
+    position: absolute;
+    bottom: 7px;
+    right: 12px;
+    z-index: 5;
+    color: #272727;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 330px;
+    height: 33px;
+}
+
+.header-nav .burger {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+    cursor: pointer;
+}
+
+.header-nav .burger-el {
+    width: 10px;
+    height: 9px;
+    background-color: #272727;
+    border-radius: 2px;
+    transition: cubic-bezier(0.65, 0.01, 0.46, 1) 0.4s;
+}
+
+.header-nav .burger-el-1 { border-bottom-right-radius: 0 }
+.header-nav .burger-el-2 { border-bottom-left-radius: 0 }
+.header-nav .burger-el-3 { border-top-right-radius: 0 }
+.header-nav .burger-el-4 { border-top-left-radius: 0 }
+
+.burger-el-1-anim {
+    transform-origin: top left;
+    transform: scale(0);
+}
+.burger-el-2-anim {
+    transform-origin: top right;
+    transform: scale(0);
+}
+.burger-el-3-anim {
+    transform-origin: bottom left;
+    transform: scale(0);
+}
+.burger-el-4-anim {
+    transform-origin: bottom right;
+    transform: scale(2);
+    height: 20px;
+}
+
+.header-nav .search-input {
+    width: 260px;
+    height: 27px;
+    padding: 3px 12px;
+    font-size: 14px;
+    background-color: #F9F9F9;
+    border: 2px solid #272727;
+    border-radius: 100px;
+    box-shadow: 6px 7px #9DE2D2;
+    cursor: text;
+    outline: none;
+}
+
+.header-nav .search-btn {
+    width: 20px;
+    height: 20px;
+    background-image: url('../medias/img/search.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.header-social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    width: 200px;
+    height: 20px;
+}
+
+.header-social .social-el {
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.header-social .social-el-1 { background-image: url('../medias/img/twitter.svg'); }
+.header-social .social-el-3 { background-image: url('../medias/img/globe.svg'); }
+.header-social .social-el-2 {
+    margin: 0 15px;
+    background-image: url('../medias/img/github.svg');
+}
