@@ -1,3 +1,4 @@
+<?php ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +11,9 @@
 </head>
 <body>
 
-    <header>
+    <header class="container">
         <h1 class="header-logo">blog.achabe.com</h1>
+        
         <nav class="header-nav">
             <div class="burger">
                 <span class="burger-el burger-el-1"></span>
@@ -19,11 +21,12 @@
                 <span class="burger-el burger-el-3"></span>
                 <span class="burger-el burger-el-4"></span>
             </div>
-            <form action="" class="search">
+            <form class="search">
                 <input type="text" class="search-input">
             </form>
             <div class="search-btn"></div>
         </nav>
+
         <div class="header-social">
             <a href="https://twitter.com/SaucySpray" class="social-el social-el-1"></a>
             <a href="https://github.com/SaucySpray" class="social-el social-el-2"></a>
@@ -31,8 +34,63 @@
         </div>
     </header>
 
-    <div class="main">
-    
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-5 offset-md-1">
+                <h2>Bonjour,</h2>
+                <p>Welcome to my blog!</p>
+            </div>
+            <div class="col-md-6">
+                <h2>Test</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="container article article-1">
+                    <div class="row-fluid article-img">
+                        <h2 class="article-title">My first Dribbble Shot</h2>
+                        <div class="article-icon"></div>
+                    </div>
+                    <div class="row-fluid">
+                        <p class="article-content">Hello Dribbble, I’m Alexandre Chabeau. I’m happy to be part of the community , I’m here to learn and share inspirations and I hope you’ll like my first shot as a player ! I would like to thanks @Cr. Cruz for the invitation, and @yoangross !</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="container-fluid article article-2">
+                    <div class="row-fluid">
+                        <h3>Article title</h3>
+                        <div class="article-icon"></div>
+                    </div>
+                    <div class="row-fluid">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, rem sequi esse delectus deserunt rerum deleniti quas distinctio nostrum dolor minus voluptas odit reprehenderit iusto quae. Voluptate hic iusto dignissimos?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="container-fluid article article-3">
+                    <div class="row-fluid">
+                        <h3>Article title</h3>
+                        <div class="article-icon"></div>
+                    </div>
+                    <div class="row-fluid">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, rem sequi esse delectus deserunt rerum deleniti quas distinctio nostrum dolor minus voluptas odit reprehenderit iusto quae. Voluptate hic iusto dignissimos?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="container-fluid article article-1">
+                    <div class="row-fluid">
+                        <h3>Article title</h3>
+                        <div class="article-icon"></div>
+                    </div>
+                    <div class="row-fluid">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, rem sequi esse delectus deserunt rerum deleniti quas distinctio nostrum dolor minus voluptas odit reprehenderit iusto quae. Voluptate hic iusto dignissimos?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="./js/index.js"></script>
