@@ -47,49 +47,15 @@
 
         <div class="row">
             <div class="col-md-4">
-                <div class="container article article-1">
+                <a href="article.php?id=1" class="container article article-1">
                     <div class="row-fluid article-img">
                         <h2 class="article-title">My first Dribbble Shot</h2>
                         <div class="article-icon"></div>
                     </div>
                     <div class="row-fluid">
-                        <p class="article-content">Hello Dribbble, I’m Alexandre Chabeau. I’m happy to be part of the community , I’m here to learn and share inspirations and I hope you’ll like my first shot as a player ! I would like to thanks @Cr. Cruz for the invitation, and @yoangross !</p>
+                        <p class="article-text">Hello Dribbble, I’m Alexandre Chabeau. I’m happy to be part of the community , I’m here to learn and share inspirations and I hope you’ll like my first shot as a player ! I would like to thanks @Cr. Cruz for the invitation, and @yoangross !</p>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="container-fluid article article-2">
-                    <div class="row-fluid">
-                        <h3>Article title</h3>
-                        <div class="article-icon"></div>
-                    </div>
-                    <div class="row-fluid">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, rem sequi esse delectus deserunt rerum deleniti quas distinctio nostrum dolor minus voluptas odit reprehenderit iusto quae. Voluptate hic iusto dignissimos?</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="container-fluid article article-3">
-                    <div class="row-fluid">
-                        <h3>Article title</h3>
-                        <div class="article-icon"></div>
-                    </div>
-                    <div class="row-fluid">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, rem sequi esse delectus deserunt rerum deleniti quas distinctio nostrum dolor minus voluptas odit reprehenderit iusto quae. Voluptate hic iusto dignissimos?</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="container-fluid article article-1">
-                    <div class="row-fluid">
-                        <h3>Article title</h3>
-                        <div class="article-icon"></div>
-                    </div>
-                    <div class="row-fluid">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, rem sequi esse delectus deserunt rerum deleniti quas distinctio nostrum dolor minus voluptas odit reprehenderit iusto quae. Voluptate hic iusto dignissimos?</p>
-                    </div>
-                </div>
-            </div>
+                </a>
         </div>
     </div>
 
