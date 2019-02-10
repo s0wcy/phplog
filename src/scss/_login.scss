@@ -1,0 +1,12 @@
+.register-btn {
+    color: $black;
+    font-weight: bold;
+    background-color: $white;
+    border: 1px solid $black;
+}
+
+.register-btn:hover {
+    color: $black;
+    background-color: $green;
+    border: 1px solid $green;
+}

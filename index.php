@@ -1,4 +1,8 @@
-<?php ?>
+<?php 
+
+include_once('./includes/connection.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +27,8 @@
             </div>
             <form class="search">
                 <input type="text" class="search-input">
+                <input type="submit" class="search-btn" value="">
             </form>
-            <div class="search-btn"></div>
         </nav>
 
         <div class="header-social">
@@ -35,17 +39,17 @@
     </header>
 
     <div class="container main">
-        <div class="row">
-            <div class="col-md-5 offset-md-1">
-                <h2>Bonjour,</h2>
-                <p>Welcome to my blog!</p>
+        <div class="row landing-row">
+            <div class="col-md-7 offset-md-1 landing-col">
+                <h2 class="landing-title">Bonjour,</h2>
+                <p class="landing-subtitle">Welcome to my blog!</p>
             </div>
-            <div class="col-md-6">
-                <h2>Test</h2>
+            <div class="col-md-3 landing-col">
+                <h2 class="landing-content">Test</h2>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row article-row">
             <div class="col-md-4">
                 <a href="article.php?id=1" class="container article article-1">
                     <div class="row-fluid article-img">
