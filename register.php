@@ -1,6 +1,7 @@
 <?php 
 
-include_once('./includes/connection.php');
+    include_once('./includes/database.php');
+    include_once('./includes/user.php');
 
 ?>
 <!DOCTYPE html>
