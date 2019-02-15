@@ -139,7 +139,7 @@ header {
 .header-nav .search-btn {
   width: 20px;
   height: 20px;
-  background-image: url("../src/medias/img/search.svg");
+  background-image: url("../medias/img/search.svg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -166,14 +166,14 @@ header {
   background-repeat: no-repeat; }
 
 .header-social .social-el-1 {
-  background-image: url("../src/medias/img/twitter.svg"); }
+  background-image: url("../medias/img/twitter.svg"); }
 
 .header-social .social-el-3 {
-  background-image: url("../src/medias/img/globe.svg"); }
+  background-image: url("../medias/img/globe.svg"); }
 
 .header-social .social-el-2 {
   margin: 0 15px;
-  background-image: url("../src/medias/img/github.svg"); }
+  background-image: url("../medias/img/github.svg"); }
 
 /* 
 ---------- MAIN ----------

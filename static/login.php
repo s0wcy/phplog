@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PHPlog - achabe.com</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
@@ -34,21 +34,15 @@
     </header>
 
     <div class="container main">
-        <h3>Register</h3>
+        <h3>Login</h3>
         <form action="#" method="post">
-            <label>Username</label><br>
+            <label>Username :</label><br>
             <input type="text" class="form-control" name="username" id="username" value="JohnDoe"><br>
-            <label>Password</label><br>
-            <input type="text" class="form-control" name="password" id="password" value="Password"><br>
-            <label>Email</label><br>
-            <input type="email" class="form-control" name="email" id="email" value="johndoe@proton.com"><br>
-            <label>Age</label><br>
-            <input type="text" class="form-control" name="age" id="age" value="99"><br>
-            <label>Gender</label><br>
-            <input type="text" class="form-control" name="gender" id="gender" value="Orc"><br>
+            <label>Password :</label><br>
+            <input type="text" class="form-control" name="password" id="password" value="sudorm-rf"><br>
             <input type="submit" class="btn btn-primary register-btn" value="Submit">
         </form>
-        or <a href="login.php?">login</a>
+        or <a href="register.php?">register</a>
     </div>
 
     <script src="./js/index.js"></script>
