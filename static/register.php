@@ -12,7 +12,7 @@
 
 <body>
     <!-- Header -->
-    <?php require_once('../includes/header.php') ?>
+    <?php include('../includes/header.php') ?>
 
     <!-- Main content -->
     <div class="container main">
@@ -35,7 +35,7 @@
             <input type="submit" class="btn btn-primary register-btn" placeholder="Submit">
         </form>
         or <a href="login.php?">login</a>
-        
+
     </div>
 
     <!-- Script -->

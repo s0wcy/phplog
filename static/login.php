@@ -12,7 +12,7 @@
 
 <body>
     <!-- Header -->
-    <?php require_once('../includes/header.php') ?>
+    <?php include('../includes/header.php') ?>
 
     <!-- Main content -->
     <div class="container main">
