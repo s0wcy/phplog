@@ -1,7 +1,7 @@
 <?php 
 
-    include_once('./includes/database.php');
-    include_once('./includes/user.php');
+    include_once('../includes/database.php');
+    include_once('../includes/user.php');
 
 ?>
 

@@ -22,7 +22,7 @@
     // Check if username or email are uniques
     function check_register($_username, $_email) {
         // Select all usernames and email equal to filled ones
-        $query = $pdo->prepare("SELECT * FROM users WHERE username=?");
+        $query = $GLOBALS['pdo']->prepare("SELECT * FROM users WHERE username=?");
         $query->execute([$_username]);
         $user = $query->fetch();
 
@@ -36,19 +36,13 @@
 
     // Hash password
     function hash_password($_password, $_username) {
-        // Define hash options
-        $options = [
-            'salt' => $_username
-        ];
-
         // Hash password and return result
-        return password_hash( $_password, PASSWORD_BCRYPT, $options);
+        return password_hash( $_password, PASSWORD_BCRYPT);
     }
 
     function register($_user) {
         if(!check_register($_user['username'], $_user['email'])) {
-            echo 'ok';
-            die;
+            
             // Check if two passwords matches & hash it
             if($_user['password_1'] == $_user['password_2']) {
                 $hashed_password = hash_password($_user['password_1'], $_user['username']);
@@ -57,7 +51,7 @@
             }
 
             // prepare SQL request
-            $prepare = $pdo->prepare(
+            $prepare = $GLOBALS['pdo']->prepare(
                 'INSERT INTO
                     users (username, email, password, age, gender)
                 VALUES
@@ -85,9 +79,11 @@
         }
     }
 
-        // âge compris entre 12 et 120
-        // genre correct
+/**
+ * DISCONNECT
+ */
 
-    // Créer une entité dans la db
-
-    // Initialiser la session
+    function disconnect() {
+        session_destroy();
+        header("Refresh:0");
+    }
