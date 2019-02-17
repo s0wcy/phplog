@@ -1,12 +1,14 @@
 html, body {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   margin: 0;
   padding: 0;
   background-color: white;
   color: #272727;
-  font-family: 'Manrope', sans-serif;
-  overflow-x: hidden; }
+  font-family: 'Manrope', sans-serif; }
+  @media screen and (max-width: 767px) {
+    html, body {
+      overflow-y: hidden;
+      overflow-y: visible; } }
 
 a {
   color: inherit;
@@ -20,6 +22,9 @@ ul {
   margin: 0;
   padding: 0;
   list-style-type: none; }
+
+.green {
+  color: #9DE2D2; }
 
 /**
  * HEADER
@@ -186,6 +191,44 @@ header {
   background-image: url("../medias/img/log-out.svg"); }
 
 /**
+ * FOOTER
+ */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+  margin: 20px 0;
+  padding: 0 10%; }
+
+.footer-social {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  width: auto;
+  height: 24px; }
+
+.footer-social .social-el {
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.footer-social .social-el-1 {
+  background-image: url("../medias/img/twitter.svg"); }
+
+.footer-social .social-el-3 {
+  background-image: url("../medias/img/globe.svg"); }
+
+.footer-social .social-el-2 {
+  margin: 0 15px;
+  background-image: url("../medias/img/github.svg"); }
+
+/**
  * MAIN
  */
 .main {
@@ -196,18 +239,41 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 40%;
+  height: 30%;
   transition: cubic-bezier(0.65, 0.01, 0.46, 1) 0.4s;
   will-change: transform; }
 
 .landing-title {
-  font-size: 88px; }
+  font-size: 88px;
+  margin: 0; }
 
 .landing-subtitle {
   font-size: 64px;
   opacity: 0.3; }
 
-.article .article-img {
+.article-preview {
+  margin-bottom: 60px; }
+
+.article-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50%;
+  margin: 20px 0; }
+
+@media screen and (max-width: 767px) {
+  .article-row-1 {
+    height: 100%;
+    margin-top: 140px; } }
+
+.article-row-2 {
+  visibility: hidden; }
+  @media screen and (max-width: 767px) {
+    .article-row-2 {
+      visibility: visible;
+      margin-top: 430px; } }
+
+.article .article-vignette {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -215,10 +281,14 @@ header {
   height: 220px;
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  position: relative; }
 
-.article-1 .article-img {
-  background-image: url("https://cdn.dribbble.com/users/2280632/screenshots/5960859/attachments/1281936/hi_dribbble_plan_de_travail_1.png"); }
+.article-img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: 5; }
 
 .article .article-title {
   display: flex;
@@ -231,7 +301,9 @@ header {
   font-size: 18px;
   font-weight: bold;
   background-color: #9DE2D2;
-  color: #ffffff; }
+  color: #ffffff;
+  position: absolute;
+  z-index: 10; }
   @media screen and (max-width: 991px) {
     .article .article-title {
       display: none; } }
@@ -242,7 +314,10 @@ header {
   align-items: center;
   width: 40px;
   height: 40px;
-  background-color: #9DE2D2; }
+  background-color: #9DE2D2;
+  position: absolute;
+  z-index: 10;
+  right: 0; }
   @media screen and (max-width: 991px) {
     .article .article-icon {
       display: none; } }
@@ -255,9 +330,6 @@ header {
 .article .article-text {
   height: 120px;
   margin-top: 18px; }
-  @media screen and (max-width: 991px) {
-    .article .article-text {
-      overflow-y: scroll; } }
   @media screen and (max-width: 767px) {
     .article .article-text {
       overflow-y: hidden; } }
@@ -265,6 +337,12 @@ header {
 /**
  *
  */
+.article-head {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 30%; }
+
 .article-meta {
   display: flex;
   justify-content: flex-end;

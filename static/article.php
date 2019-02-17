@@ -2,6 +2,14 @@
 
     include_once('../includes/database.php');
 
+    if(isset($_GET['id'])) {
+        $query = $GLOBALS['pdo']->prepare("SELECT * FROM articles WHERE id=?");
+        $query->execute([$_GET['id']]);
+        $article = $query->fetch();
+    } else {
+        header('Location:index.php');
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -16,14 +24,15 @@
     <!-- Main content -->
     <div class="container main">
 
-        <div class="row article-head"></div>
+        <img src="./medias/img/<?= $article->image; ?>" class="row-fill article-head"></img>
         <div class="row article-infos">
-            <h2 class="col-md-6 article-title">Article title</h2>
+            <h2 class="col-md-6 article-title"><?= $article->title; ?></h2>
             <div class="col-md-6 article-meta">
-                <div class="author">Alex</div>
-                <div class="date">27/05/2019</div>
+                <div class="author"><?= $article->author; ?></div>
+                <div class="date"><?= $article->date; ?></div>
             </div>
         </div>
+        <div class="article-content"><?= $article->content; ?></div>
 
     </div>
 

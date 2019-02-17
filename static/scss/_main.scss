@@ -11,13 +11,14 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 40%;
+    height: 30%;
     transition: cubic-bezier(0.65, 0.01, 0.46, 1) 0.4s;
     will-change: transform;
 }
 
 .landing-title {
     font-size: 88px;
+    margin: 0;
 }
 
 .landing-subtitle {
@@ -25,7 +26,36 @@
     opacity: 0.3;
 }
 
-.article .article-img {
+// Article landing
+
+.article-preview {
+    margin-bottom: 60px;
+}
+
+.article-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50%;
+    margin: 20px 0;
+}
+
+.article-row-1 {
+    @media screen and (max-width: 767px) {
+        height: 100%;
+        margin-top: 140px;
+    }
+}
+
+.article-row-2 {
+    visibility: hidden;
+    @media screen and (max-width: 767px) {
+        visibility: visible;
+        margin-top: 430px;
+    }
+}
+
+.article .article-vignette {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -34,10 +64,14 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
 }
 
-.article-1 .article-img {
-    background-image: url("https://cdn.dribbble.com/users/2280632/screenshots/5960859/attachments/1281936/hi_dribbble_plan_de_travail_1.png");
+.article-img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 5;
 }
 
 .article .article-title {
@@ -52,6 +86,8 @@
     font-weight: bold;
     background-color: $green;
     color: #ffffff;
+    position: absolute;
+    z-index: 10;
     @media screen and (max-width: 991px) { display: none; }
 }
 
@@ -62,6 +98,9 @@
     width: 40px;
     height: 40px;
     background-color: $green;
+    position: absolute;
+    z-index: 10;
+    right: 0;
     @media screen and (max-width: 991px) { display: none; }
 }
 
@@ -74,6 +113,5 @@
 .article .article-text {
     height: 120px;
     margin-top: 18px;
-    @media screen and (max-width: 991px) { overflow-y: scroll; }
     @media screen and (max-width: 767px) { overflow-y: hidden; }
 }

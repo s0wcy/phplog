@@ -10,7 +10,24 @@ $burger.part3 = $burger.btn.querySelector('.burger-el-3')
 $burger.part4 = $burger.btn.querySelector('.burger-el-4')
 
 $landing = document.querySelector('.landing-row')
+$articleRow = document.querySelector('.article-row')
+$articleRow2 = document.querySelector('.article-row-2')
 let isLanding = true
+
+if (window.innerWidth < 768) {
+    $burger.btn.style.display = 'none'
+    $landing.style.display = 'none'
+}
+
+window.addEventListener('resize', () => {
+    if(window.innerWidth < 768) {
+        $burger.btn.style.display = 'none'
+        $landing.style.display = 'none'
+    } else {
+        $burger.btn.style.display = 'flex'
+        $landing.style.display = 'flex'
+    }
+})
 
 $burger.btn.addEventListener('click', () => {
     $burger.part1.classList.toggle('burger-el-1-anim')
@@ -25,10 +42,18 @@ const landingDisplay = () => {
     if(isLanding) {
         $landing.style.transform = 'scale(0)'
         setTimeout(() => $landing.style.display = 'none', 300)
+        $articleRow.style.height = '35%'
+        $articleRow2.style.visibility = 'visible'
+        document.body.style.overflowY = 'visible'
+
         isLanding = false
     } else {
         $landing.style.display = 'flex'
         setTimeout(() => $landing.style.transform = 'scale(1)', 100)
+        $articleRow.style.height = '50%'
+        $articleRow2.style.visibility = 'hidden'
+        document.body.style.overflowY = 'hidden'
+
         isLanding = true
     }
 }
@@ -48,4 +73,3 @@ $search.input.addEventListener('focusin', () => {
 $search.input.addEventListener('focusout', () => {
     $search.input.classList.toggle('search-input-anim')
 })
-
