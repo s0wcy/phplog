@@ -18,7 +18,7 @@
             echo 'Everything is 👌';
         }
     }
-    var_dump($_SESSION);
+    
 ?>
 
 <!DOCTYPE html>

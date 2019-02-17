@@ -6,38 +6,39 @@
     include_once 'database.php';
 
 /**
- * LOGIN
- */
-
-    // Check si l'utilisateur existe :
-        // Si non = ERREUR + Proposer de register
-        // Si oui = Trouver l'id et comparer le mot de password hash & salt
-
-    // Initialiser la session
-
-/**
  * REGISTER
  */
 
     // Check if username or email are uniques
     function check_register($_username, $_email) {
         // Select all usernames and email equal to filled ones
-        $query = $GLOBALS['pdo']->prepare("SELECT * FROM users WHERE username=?");
-        $query->execute([$_username]);
+        if($_email != null) {
+            $query = $GLOBALS['pdo']->prepare("SELECT * FROM users WHERE email=:email OR username=:username");
+            $query->execute([
+                'username'=>$_username,
+                'email'=>$_email
+            ]);
+        } else {
+            $query = $GLOBALS['pdo']->prepare("SELECT * FROM users WHERE username=?");
+            $query->execute([$_username]);
+        }
         $user = $query->fetch();
 
         // If there is at least one match, return true
         if($user) {
-            return true;
+            return [
+                'success' => true,
+                'user' => $user
+            ];
         } else {
             return false;
         }
     }
 
     // Hash password
-    function hash_password($_password, $_username) {
+    function hash_password($_password) {
         // Hash password and return result
-        return password_hash( $_password, PASSWORD_BCRYPT);
+        return md5( $_password);
     }
 
     function register($_user) {
@@ -45,7 +46,7 @@
             
             // Check if two passwords matches & hash it
             if($_user['password_1'] == $_user['password_2']) {
-                $hashed_password = hash_password($_user['password_1'], $_user['username']);
+                $hashed_password = hash_password($_user['password_1']);
             } else {
                 return 'ERROR: The two passwords doesn\'t match.';
             }
@@ -80,10 +81,42 @@
     }
 
 /**
+ * LOGIN
+ */
+
+    // Check si l'utilisateur existe :
+        // Si non = ERREUR + Proposer de register
+        // Si oui = Trouver l'id et comparer le mot de password hash & salt
+
+    function login($_user) {
+        // Check only username with check_register
+        $data = check_register($_user['username'], null);
+        if($data['success'] == true) {
+            
+            if($data['user']->password == hash_password($_user['password'])) {
+                $_SESSION['logged_in'] = true;
+                $_SESSION['username'] = $_user['username'];
+                header('Location:./index.php');
+            } else {
+                return 'Incorrect password !';
+            }
+
+        } else {
+            return 'No match in db, pls register.';
+        }
+    }
+
+    // Initialiser la session
+
+/**
  * DISCONNECT
  */
 
     function disconnect() {
         session_destroy();
-        header("Refresh:0");
+        /* Redirection vers une page différente du même dossier */
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = '/phplog/static';
+        $extra = 'login.php';
+        header("Location: http://$host$uri/$extra");
     }

@@ -3,6 +3,12 @@
     include_once('../includes/database.php');
     include_once('../includes/user.php');
 
+    if(!empty($_POST)) {
+        login([
+            'username' => $_POST['username'],
+            'password' => $_POST['password']
+        ]);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -19,14 +25,14 @@
 
         <!-- Login form -->
         <h3>Login</h3>
-        <form action="#" method="post">
+        <form action="login.php" method="post">
             <label>Username :</label><br>
-            <input type="text" class="form-control" name="username" id="username" value="JohnDoe"><br>
+            <input type="text" class="form-control" name="username" id="username" placeholder="JohnDoe"><br>
             <label>Password :</label><br>
-            <input type="text" class="form-control" name="password" id="password" value="sudorm-rf"><br>
+            <input type="password" class="form-control" name="password" id="password" placeholder="sudorm-rf"><br>
             <input type="submit" class="btn btn-primary register-btn" value="Submit">
         </form>
-        or <a href="register.php?">register</a>
+        or <a href="register.php">register</a>
 
     </div>
 
