@@ -5,7 +5,8 @@ html, body {
   padding: 0;
   background-color: white;
   color: #272727;
-  font-family: 'Manrope', sans-serif; }
+  font-family: 'Manrope', sans-serif;
+  overflow-x: hidden; }
 
 a {
   color: inherit;
@@ -20,9 +21,9 @@ ul {
   padding: 0;
   list-style-type: none; }
 
-/* 
----------- HEADER ----------
-*/
+/**
+ * HEADER
+ */
 header {
   display: flex;
   justify-content: space-between;
@@ -42,7 +43,8 @@ header {
   left: 6px;
   z-index: 10;
   color: #9DE2D2;
-  user-select: none; }
+  user-select: none;
+  cursor: pointer; }
 
 .header-logo::after {
   content: 'blog.achabe.com';
@@ -57,12 +59,13 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  width: 330px;
+  width: auto;
   height: 33px; }
 
 .header-nav .burger {
   width: 22px;
   height: 24px;
+  margin-right: 0.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -111,6 +114,9 @@ header {
   align-items: center;
   flex-direction: row;
   width: 300px; }
+  @media screen and (max-width: 767px) {
+    .header-nav .search {
+      display: none; } }
 
 .header-nav .search-input {
   width: 260px;
@@ -149,34 +155,39 @@ header {
 .header-nav .search-btn:hover {
   transform: rotate(-15deg); }
 
-.header-social {
+.header-connect {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: row;
-  width: 200px;
+  width: 170px;
   height: 24px; }
+  @media screen and (max-width: 1199px) {
+    .header-connect {
+      width: 125px; } }
+  @media screen and (max-width: 991px) {
+    .header-connect {
+      width: 60px; } }
+  @media screen and (max-width: 767px) {
+    .header-connect {
+      display: none; } }
 
-.header-social .social-el {
+.header-connect .connect-el {
   width: 24px;
   height: 24px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat; }
 
-.header-social .social-el-1 {
-  background-image: url("../medias/img/twitter.svg"); }
+.header-connect .login {
+  background-image: url("../medias/img/log-in.svg"); }
 
-.header-social .social-el-3 {
-  background-image: url("../medias/img/globe.svg"); }
+.header-connect .logout {
+  background-image: url("../medias/img/log-out.svg"); }
 
-.header-social .social-el-2 {
-  margin: 0 15px;
-  background-image: url("../medias/img/github.svg"); }
-
-/* 
----------- MAIN ----------
-*/
+/**
+ * MAIN
+ */
 .main {
   width: 100%;
   height: 100%; }
@@ -221,6 +232,9 @@ header {
   font-weight: bold;
   background-color: #9DE2D2;
   color: #ffffff; }
+  @media screen and (max-width: 991px) {
+    .article .article-title {
+      display: none; } }
 
 .article .article-icon {
   display: flex;
@@ -229,6 +243,9 @@ header {
   width: 40px;
   height: 40px;
   background-color: #9DE2D2; }
+  @media screen and (max-width: 991px) {
+    .article .article-icon {
+      display: none; } }
 
 .article-icon::after {
   background-position: center;
@@ -236,8 +253,30 @@ header {
   background-repeat: no-repeat; }
 
 .article .article-text {
+  height: 120px;
   margin-top: 18px; }
+  @media screen and (max-width: 991px) {
+    .article .article-text {
+      overflow-y: scroll; } }
+  @media screen and (max-width: 767px) {
+    .article .article-text {
+      overflow-y: hidden; } }
 
+/**
+ *
+ */
+.article-meta {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row; }
+
+.article-meta .author {
+  margin-right: 0.25rem; }
+
+/**
+ * LOGIN
+ */
 .register-btn {
   color: #272727;
   font-weight: bold;

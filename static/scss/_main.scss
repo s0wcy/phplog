@@ -1,6 +1,6 @@
-/* 
----------- MAIN ----------
-*/
+/**
+ * MAIN
+ */
 
 .main {
     width: 100%;
@@ -52,6 +52,7 @@
     font-weight: bold;
     background-color: $green;
     color: #ffffff;
+    @media screen and (max-width: 991px) { display: none; }
 }
 
 .article .article-icon {
@@ -61,6 +62,7 @@
     width: 40px;
     height: 40px;
     background-color: $green;
+    @media screen and (max-width: 991px) { display: none; }
 }
 
 .article-icon::after {
@@ -70,5 +72,8 @@
 }
 
 .article .article-text {
+    height: 120px;
     margin-top: 18px;
+    @media screen and (max-width: 991px) { overflow-y: scroll; }
+    @media screen and (max-width: 767px) { overflow-y: hidden; }
 }

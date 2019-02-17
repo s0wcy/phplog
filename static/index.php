@@ -18,12 +18,9 @@
 
         <!-- Landing -->
         <div class="row landing-row">
-            <div class="col-md-7 offset-md-1 landing-col">
+            <div class="col-md-10 landing-col">
                 <h2 class="landing-title">Bonjour,</h2>
                 <p class="landing-subtitle">Welcome to my blog!</p>
-            </div>
-            <div class="col-md-3 landing-col">
-                <h2 class="landing-content">Test</h2>
             </div>
         </div>
 

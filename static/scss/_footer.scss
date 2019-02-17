@@ -1,0 +1,33 @@
+/**
+ * FOOTER
+ */
+
+.footer-social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    width: 200px;
+    height: 24px;
+}
+
+.footer-social .social-el {
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.footer-social .social-el-1 {
+    background-image: url('../medias/img/twitter.svg');
+}
+
+.footer-social .social-el-3 {
+    background-image: url('../medias/img/globe.svg');
+}
+
+.footer-social .social-el-2 {
+    margin: 0 15px;
+    background-image: url('../medias/img/github.svg');
+}

@@ -1,17 +1,17 @@
 <?php
-
+    // Start session
     session_start();
 
     // Include database
     include_once 'database.php';
 
 /**
- * REGISTER
+ * TOOLS
  */
 
     // Check if username or email are uniques
     function check_register($_username, $_email) {
-        // Select all usernames and email equal to filled ones
+        // If function is called with email argument, return an object with 
         if($_email != null) {
             $query = $GLOBALS['pdo']->prepare("SELECT * FROM users WHERE email=:email OR username=:username");
             $query->execute([
@@ -24,7 +24,7 @@
         }
         $user = $query->fetch();
 
-        // If there is at least one match, return true
+        // If there is at least one match, return object & success
         if($user) {
             return [
                 'success' => true,
@@ -37,9 +37,13 @@
 
     // Hash password
     function hash_password($_password) {
-        // Hash password and return result
+        // Return hash result (need custom because md5 is 💩)
         return md5( $_password);
     }
+
+/**
+ * REGISTER
+ */
 
     function register($_user) {
         if(!check_register($_user['username'], $_user['email'])) {
@@ -84,15 +88,11 @@
  * LOGIN
  */
 
-    // Check si l'utilisateur existe :
-        // Si non = ERREUR + Proposer de register
-        // Si oui = Trouver l'id et comparer le mot de password hash & salt
-
     function login($_user) {
         // Check only username with check_register
         $data = check_register($_user['username'], null);
         if($data['success'] == true) {
-            
+
             if($data['user']->password == hash_password($_user['password'])) {
                 $_SESSION['logged_in'] = true;
                 $_SESSION['username'] = $_user['username'];
@@ -106,15 +106,15 @@
         }
     }
 
-    // Initialiser la session
-
 /**
- * DISCONNECT
+ * LOGOUT
  */
 
-    function disconnect() {
+    function logout() {
+        // Stop session
         session_destroy();
-        /* Redirection vers une page différente du même dossier */
+
+        // Redirecting to index.php
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = '/phplog/static';
         $extra = 'login.php';

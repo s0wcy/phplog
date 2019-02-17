@@ -13,10 +13,15 @@
         ]);
 
         if($reg != true) {
-            echo $reg;
+            echo '$reg';
+            unset($_POST);
         } else {
             echo 'Everything is 👌';
+            unset($_POST);
         }
+    } else {
+        echo 'Empty';
+        unset($_POST);
     }
     
 ?>
@@ -40,7 +45,7 @@
             <input type="text" class="form-control" id="username" name="username" placeholder="JohnDoe"><br>
 
             <label for="email">Email</label><br>
-            <input type="email" class="form-control" id="email" name="email" placeholder="johndoe@proton.com"><br>
+            <input type="email" class="form-control" id="email" name="email" placeholder="johndoe@protonmail.com"><br>
 
             <label for="password_1">Password</label><br>
             <input type="password" class="form-control" id="password_1" name="password_1" placeholder="Password"><br>

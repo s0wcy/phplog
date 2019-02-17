@@ -1,6 +1,6 @@
-/* 
----------- HEADER ----------
-*/
+/**
+ * HEADER
+ */
 
 header {
     display: flex;
@@ -23,6 +23,7 @@ header {
     z-index: 10;
     color: $green;
     user-select: none;
+    cursor: pointer;
 }
 
 .header-logo::after {
@@ -39,13 +40,14 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    width: 330px;
+    width: auto;
     height: 33px;
 }
 
 .header-nav .burger {
     width: 22px;
     height: 24px;
+    margin-right: 0.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,21 +64,13 @@ header {
     will-change: transform;
 }
 
-.header-nav .burger-el-1 {
-    border-bottom-right-radius: 0
-}
+.header-nav .burger-el-1 { border-bottom-right-radius: 0 }
 
-.header-nav .burger-el-2 {
-    border-bottom-left-radius: 0
-}
+.header-nav .burger-el-2 { border-bottom-left-radius: 0 }
 
-.header-nav .burger-el-3 {
-    border-top-right-radius: 0
-}
+.header-nav .burger-el-3 { border-top-right-radius: 0 }
 
-.header-nav .burger-el-4 {
-    border-top-left-radius: 0
-}
+.header-nav .burger-el-4 { border-top-left-radius: 0 }
 
 .burger-el-1-anim {
     transform-origin: top left;
@@ -104,6 +98,7 @@ header {
     align-items: center;
     flex-direction: row;
     width: 300px;
+    @media screen and (max-width: 767px){ display: none; }
 }
 
 .header-nav .search-input {
@@ -146,16 +141,19 @@ header {
     transform: rotate(-15deg);
 }
 
-.header-social {
+.header-connect {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-direction: row;
-    width: 200px;
+    width: 170px;
     height: 24px;
+    @media screen and (max-width: 1199px){ width: 125px; }
+    @media screen and (max-width: 991px){ width: 60px; }
+    @media screen and (max-width: 767px){ display: none; }
 }
 
-.header-social .social-el {
+.header-connect .connect-el {
     width: 24px;
     height: 24px;
     background-position: center;
@@ -163,15 +161,6 @@ header {
     background-repeat: no-repeat;
 }
 
-.header-social .social-el-1 {
-    background-image: url('../medias/img/twitter.svg');
-}
+.header-connect .login { background-image: url('../medias/img/log-in.svg'); }
 
-.header-social .social-el-3 {
-    background-image: url('../medias/img/globe.svg');
-}
-
-.header-social .social-el-2 {
-    margin: 0 15px;
-    background-image: url('../medias/img/github.svg');
-}
+.header-connect .logout { background-image: url('../medias/img/log-out.svg'); }
