@@ -18,7 +18,7 @@
 
 <body>
     <!-- Header -->
-    <?php include('../includes/header.php') ?>
+    <?php include_once('../includes/header.php') ?>
 
     <!-- Main content -->
     <div class="container main">

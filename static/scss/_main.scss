@@ -29,18 +29,21 @@
 // Article landing
 
 .article-preview {
-    margin-bottom: 60px;
+    @media screen and (max-width: 767px) {
+        margin-bottom: 40px;
+    }
 }
 
 .article-row {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 50%;
+    height: 30%;
     margin: 20px 0;
 }
 
 .article-row-1 {
+    margin-top: 60px;
     @media screen and (max-width: 767px) {
         height: 100%;
         margin-top: 140px;
@@ -51,7 +54,6 @@
     visibility: hidden;
     @media screen and (max-width: 767px) {
         visibility: visible;
-        margin-top: 430px;
     }
 }
 
@@ -69,7 +71,7 @@
 
 .article-img {
     width: 100%;
-    height: auto;
+    object-fit: contain;
     position: absolute;
     z-index: 5;
 }

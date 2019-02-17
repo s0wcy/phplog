@@ -2,6 +2,8 @@
 
     include_once '../includes/user.php' ;
 
+    $error = null;
+
     if(!empty($_POST)) {
         $reg = register([
             'username' => $_POST['username'],
@@ -13,14 +15,13 @@
         ]);
 
         if($reg != true) {
-            echo '$reg';
+            $error = $reg;
             unset($_POST);
         } else {
-            echo 'Everything is 👌';
             unset($_POST);
+            header('Location:index.php');
         }
     } else {
-        echo 'Empty';
         unset($_POST);
     }
     
@@ -40,6 +41,9 @@
 
         <!-- Register form -->
         <h3>Register</h3>
+        <?php if($error != null) { ?>
+            <h4><?= $error ?></h4>
+        <?php } ?>
         <form action="register.php" method="post">
             <label for="username">Username</label><br>
             <input type="text" class="form-control" id="username" name="username" placeholder="JohnDoe"><br>

@@ -1,7 +1,6 @@
 <?php
 
     include_once 'user.php';
-    include_once 'search.php';
 
     if(isset($_GET['logout']) && $_GET['logout'] == true) {
         $exit = logout();
